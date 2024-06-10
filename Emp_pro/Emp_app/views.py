@@ -24,8 +24,8 @@ def Add_Employee(request):
         form = Emp_Form(request.POST)
         if form.is_valid():
             form.save()
-            # return redirect("/Emp_details/") 
-            return redirect("/") 
+            return redirect("/Emp_details/") 
+            # return redirect("/") 
 
     return render(request,"add_employee.html",{"Form":forms})
 
@@ -42,8 +42,8 @@ def Edit_Employee(request,id):
         form = Emp_Form(request.POST,instance=employee)
         if form.is_valid:
             form.save()
-            # return redirect("/Emp_details/")
-            return redirect("/") 
+            return redirect("/Emp_details/")
+            # return redirect("/") 
  
 
     return render(request,"edit_employee.html",context)
@@ -52,8 +52,8 @@ def Edit_Employee(request,id):
 def Delete_Employee(request,id):
     employee = EMPLOYEE.objects.get(id=id)
     employee.delete()
-    # return redirect("/Emp_details/")
-    return redirect("/") 
+    return redirect("/Emp_details/")
+    # return redirect("/") 
 
 
 
